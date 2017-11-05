@@ -1,5 +1,7 @@
 package th.ac.kmitl.science.comsci.example.controllers;
 
+import th.ac.kmitl.science.comsci.example.models.Hello;
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -13,7 +15,7 @@ public class HelloServlet
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String message = "Hello World!!";
+        String message = new Hello().getMessage();
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
