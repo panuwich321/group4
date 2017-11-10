@@ -22,8 +22,7 @@ public class HelloServlet
         out.println("<h1>" + message + "</h1>");
         out.println("<ul>");
         out.println("<li>Bearchitect</li>");
-        out.println("<li>Bear(True)</li>");
+        out.println("<li>57050279 Piyapon Suntikan</li>");
         out.println("</ul>");
     }
-
 }
