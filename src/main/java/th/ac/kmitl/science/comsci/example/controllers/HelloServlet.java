@@ -21,7 +21,7 @@ public class HelloServlet
         PrintWriter out = response.getWriter();
         out.println("<h1>" + message + "</h1>");
         out.println("<h2>");
-        out.println("Loong Phoo is here");
+        out.println("Loong Phoo");
         out.println("</h2>");
     }
 
