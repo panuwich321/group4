@@ -5,6 +5,10 @@ Test
 ==========
 $> mvn clean compile test
 
+Build WAR file
+==============
+$> mvn clean package
+
 Run
 ==========
 $> mvn clean install tomcat7:run
