@@ -20,7 +20,9 @@ public class HelloServlet
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.println("<h1>" + message + "</h1>");
-        out.println("<h2>Loong Phoo is here</h2>");
+        out.println("<h2>");
+        out.println("Loong Phoo is here");
+        out.println("</h2>");
     }
 
 }
