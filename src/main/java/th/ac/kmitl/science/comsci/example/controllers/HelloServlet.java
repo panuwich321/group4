@@ -20,9 +20,10 @@ public class HelloServlet
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.println("<h1>" + message + "</h1>");
-        out.println("<ul>");
-        out.println("<li>" + "57050221 Nattadet Vijaranakul" + "</li>");
+        out.println("<ul>");  
+        out.println("<li>Bearchitect</li>");
+        out.println("<li>58050237 Chayapol Limanon</li>");
+        out.println("<li>57050221 Nattadet Vijaranakul</li>");
         out.println("</ul>");
     }
-
 }
