@@ -22,8 +22,8 @@ public class HelloServlet
         out.println("<h1>" + message + "</h1>");
         out.println("<ul>");
         out.println("<li>Bearchitect</li>");
-        out.println("<li>Jane 57050294</li>");
+        out.println("<li>58050237 Chayapol Limanon</li>");
+        out.println("<li>57050294 Pichavarit Panyokaew</li>");
         out.println("</ul>");
     }
-
 }
