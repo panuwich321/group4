@@ -27,9 +27,7 @@ public class HelloServlet
         out.println("<h1>" + message + "</h1>");
         out.println("<ul>");
 
-        // Change printing algorithm to use NamePrinterLoader instead.
-        for (NamePrinter namePrinter : NamePrinterLoader.getInstance())
-            namePrinter.print(out);
+        NamePrinterLoader.getInstance().printAllNames(out);
 
         out.println("</ul>");
     }

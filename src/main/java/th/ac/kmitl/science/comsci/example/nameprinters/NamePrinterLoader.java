@@ -2,6 +2,8 @@ package th.ac.kmitl.science.comsci.example.nameprinters;
 
 import org.reflections.Reflections;
 
+import javax.print.attribute.standard.MediaSize;
+import java.io.PrintWriter;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -10,19 +12,17 @@ import java.util.Set;
 
 public class NamePrinterLoader implements Iterable<NamePrinter> {
 
-    //Singleton implementation
     private static NamePrinterLoader instance;
+    private static Reflections reflections;
     private final String packageIdentifier;
     private List<NamePrinter> namePrinters;
+    private Set<Class<? extends NamePrinter>> allNamePrinterClasses;
+
     private NamePrinterLoader() {
         packageIdentifier = getClass().getPackage().getName();
-
-        try {
-            namePrinters = getAllNamePrinters();
-        } catch (Exception e) {
-            e.printStackTrace();
-            namePrinters = null;
-        }
+        reflections = new Reflections(packageIdentifier);
+        setAllNamePrinterClasses(reflections.getSubTypesOf(NamePrinter.class));
+        namePrinters = getAllNamePrinters();
     }
 
     public static NamePrinterLoader getInstance() {
@@ -32,25 +32,55 @@ public class NamePrinterLoader implements Iterable<NamePrinter> {
         return instance;
     }
 
+    private void reload() {
+        namePrinters = getAllNamePrinters();
+    }
+
     @Override
     public Iterator<NamePrinter> iterator() {
         return namePrinters.iterator();
     }
 
-    private List<NamePrinter> getAllNamePrinters() throws Exception {
+    private List<NamePrinter> getAllNamePrinters() {
         List<NamePrinter> namePrinters = new ArrayList<>();
-        Reflections reflections = new Reflections(packageIdentifier);
-        Set<Class<? extends NamePrinter>> allClasses = reflections.getSubTypesOf(NamePrinter.class);
+        Set<Class<? extends NamePrinter>> allNamePrinterClasses = getAllNamePrinterClasses();
 
-        for (Class classFound : allClasses) {
-            if (NamePrinter.class.isAssignableFrom(classFound)
-                    && !classFound.isInterface()
-                    && !Modifier.isAbstract(classFound.getModifiers())) {
-                Object namePrinterObj = classFound.newInstance();
-                namePrinters.add((NamePrinter) namePrinterObj);
+        for (Class<? extends NamePrinter> namePrinterClass : allNamePrinterClasses) {
+            if (isInstantiable(namePrinterClass)) {
+                Object namePrinterObj;
+                try {
+                    namePrinterObj = namePrinterClass.newInstance();
+                    namePrinters.add((NamePrinter) namePrinterObj);
+                } catch (InstantiationException e) {
+                    continue;
+                } catch (IllegalAccessException e) {
+                    continue;
+                }
             }
         }
 
         return namePrinters;
+    }
+
+    private boolean isInstantiable(Class<? extends NamePrinter> namePrinterClass) {
+
+        return
+                NamePrinter.class.isAssignableFrom(namePrinterClass)
+                        && !namePrinterClass.isInterface()
+                        && !Modifier.isAbstract(namePrinterClass.getModifiers());
+    }
+
+    public void printAllNames(PrintWriter writer) {
+        for (NamePrinter namePrinter : this)
+            namePrinter.print(writer);
+    }
+
+    public Set<Class<? extends NamePrinter>> getAllNamePrinterClasses() {
+        return allNamePrinterClasses;
+    }
+
+    public void setAllNamePrinterClasses(Set<Class<? extends NamePrinter>> allNamePrinterClasses) {
+        this.allNamePrinterClasses = allNamePrinterClasses;
+        reload();
     }
 }

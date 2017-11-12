@@ -1,8 +1,9 @@
 package th.ac.kmitl.science.comsci.example.nameprinters;
 
-public class NamePrinterBaseExampleNamePrinter extends NamePrinterBase {
+public class BearNamePrinter extends NamePrinterBase {
+
     @Override
     public String getName() {
-        return "ExampleName";
+        return "Bearchitect\n";
     }
 }

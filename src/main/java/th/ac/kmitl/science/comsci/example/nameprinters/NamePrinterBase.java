@@ -3,10 +3,11 @@ package th.ac.kmitl.science.comsci.example.nameprinters;
 import java.io.PrintWriter;
 
 public abstract class NamePrinterBase implements NamePrinter {
-    private String liTagPattern = "<li>%s</li>";
+
+    private final String listItemTagPattern = "<li>%s</li>";
 
     public void print(PrintWriter writer) {
-        writer.println(String.format(liTagPattern, this.getName()));
+        writer.println(listItemTagPattern.replace("%s", this.getName()));
     }
 
 }
