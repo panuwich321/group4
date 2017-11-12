@@ -31,6 +31,7 @@ public class HelloServlet
         out.println("<li>57050279 Piyapon Suntikan</li>");
         out.println("<li>57050356 Apiwoot Narunatwattana</li>");
         out.println("<li>57050252 Nontakhon kerdmongkol</li>");
+        out.println("<li>57050203 Charunthron Rattanamanoporn</li>");
         out.println("</ul>");
     }
 }
