@@ -4,6 +4,6 @@ public class ApiwootNamePrinter extends NamePrinterBase {
 
     @Override
     public String getName() {
-        return "57050356 Apiwoot Narunatwattana\n";
+        return "57050356 Apiwoot Narunatwattana";
     }
 }

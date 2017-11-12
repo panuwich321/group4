@@ -4,6 +4,6 @@ public class BearNamePrinter extends NamePrinterBase {
 
     @Override
     public String getName() {
-        return "Bearchitect\n";
+        return "Bearchitect";
     }
 }

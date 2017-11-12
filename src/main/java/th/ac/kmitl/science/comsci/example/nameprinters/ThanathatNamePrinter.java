@@ -4,6 +4,6 @@ public class ThanathatNamePrinter extends NamePrinterBase {
 
     @Override
     public String getName() {
-        return "58050276 Thanathat Surakhup\n";
+        return "58050276 Thanathat Surakhup";
     }
 }

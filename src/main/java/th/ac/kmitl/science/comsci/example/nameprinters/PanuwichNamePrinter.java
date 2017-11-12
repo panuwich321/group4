@@ -4,6 +4,6 @@ public class PanuwichNamePrinter extends NamePrinterBase {
 
     @Override
     public String getName() {
-        return "58050355 Panuwich Laoudom\n";
+        return "58050355 Panuwich Laoudom";
     }
 }
