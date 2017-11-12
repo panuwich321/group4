@@ -2,7 +2,6 @@ package th.ac.kmitl.science.comsci.example.nameprinters;
 
 import org.reflections.Reflections;
 
-import javax.print.attribute.standard.MediaSize;
 import java.io.PrintWriter;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
@@ -22,7 +21,7 @@ public class NamePrinterLoader implements Iterable<NamePrinter> {
         packageIdentifier = getClass().getPackage().getName();
         reflections = new Reflections(packageIdentifier);
         setAllNamePrinterClasses(reflections.getSubTypesOf(NamePrinter.class));
-        namePrinters = getAllNamePrinters();
+        namePrinters = getAvailableNamePrinters();
     }
 
     public static NamePrinterLoader getInstance() {
@@ -33,7 +32,7 @@ public class NamePrinterLoader implements Iterable<NamePrinter> {
     }
 
     private void reload() {
-        namePrinters = getAllNamePrinters();
+        namePrinters = getAvailableNamePrinters();
     }
 
     @Override
@@ -41,7 +40,7 @@ public class NamePrinterLoader implements Iterable<NamePrinter> {
         return namePrinters.iterator();
     }
 
-    private List<NamePrinter> getAllNamePrinters() {
+    private List<NamePrinter> getAvailableNamePrinters() {
         List<NamePrinter> namePrinters = new ArrayList<>();
         Set<Class<? extends NamePrinter>> allNamePrinterClasses = getAllNamePrinterClasses();
 
