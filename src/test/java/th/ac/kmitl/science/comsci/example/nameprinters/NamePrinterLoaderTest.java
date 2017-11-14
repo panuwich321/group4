@@ -44,18 +44,4 @@ public class NamePrinterLoaderTest {
 
         assertEquals(2, namePrinterLoader.count());
     }
-
-    @Test
-    public void printAllNames() {
-        StringWriter resultStringWriter = new StringWriter();
-        PrintWriter resultPrintWriter = new PrintWriter(resultStringWriter);
-        setupMockNamePrinterLoader().printAllNames(resultPrintWriter);
-
-        StringWriter mockStringWriter = new StringWriter();
-        PrintWriter mockPrintWriter = new PrintWriter(mockStringWriter);
-        new ChayapolNamePrinter().print(mockPrintWriter);
-        new BearNamePrinter().print(mockPrintWriter);
-
-        assertEquals (mockStringWriter.toString(), resultStringWriter.toString());
-    }
 }
