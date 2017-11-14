@@ -58,5 +58,4 @@ public class NamePrinterLoaderTest {
 
         assertEquals (mockStringWriter.toString(), resultStringWriter.toString());
     }
-
 }
