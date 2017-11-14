@@ -25,7 +25,9 @@ public class HelloServlet
         PrintWriter out = response.getWriter();
         out.println("<h1>" + message + "</h1>");
         out.println("<ul>");
+        
         NamePrinterLoader.getInstance().printAllNames(out);
+        
         out.println("</ul>");
     }
 }
