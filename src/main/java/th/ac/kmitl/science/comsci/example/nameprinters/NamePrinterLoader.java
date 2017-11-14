@@ -21,7 +21,7 @@ public class NamePrinterLoader implements Iterable<NamePrinter> {
         packageIdentifier = getClass().getPackage().getName();
         reflections = new Reflections(packageIdentifier);
         setAllNamePrinterClasses(reflections.getSubTypesOf(NamePrinter.class));
-        namePrinters = getAvailableNamePrinters();
+        reload();
     }
 
     public static NamePrinterLoader getInstance() {
@@ -31,8 +31,17 @@ public class NamePrinterLoader implements Iterable<NamePrinter> {
         return instance;
     }
 
-    private void reload() {
+    public void reload() {
         namePrinters = getAvailableNamePrinters();
+    }
+
+    public void restoreDefault() {
+        setAllNamePrinterClasses(reflections.getSubTypesOf(NamePrinter.class));
+        reload();
+    }
+
+    public int count(){
+        return namePrinters.size();
     }
 
     @Override
@@ -51,8 +60,10 @@ public class NamePrinterLoader implements Iterable<NamePrinter> {
                     namePrinterObj = namePrinterClass.newInstance();
                     namePrinters.add((NamePrinter) namePrinterObj);
                 } catch (InstantiationException e) {
-                    continue;
+                    e.printStackTrace();
                 } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } finally {
                     continue;
                 }
             }
@@ -70,8 +81,8 @@ public class NamePrinterLoader implements Iterable<NamePrinter> {
     }
 
     public void printAllNames(PrintWriter writer) {
-        for (NamePrinter namePrinter : this)
-            namePrinter.print(writer);
+        for (NamePrinter printable : this)
+            printable.print(writer);
     }
 
     public Set<Class<? extends NamePrinter>> getAllNamePrinterClasses() {
@@ -80,6 +91,5 @@ public class NamePrinterLoader implements Iterable<NamePrinter> {
 
     public void setAllNamePrinterClasses(Set<Class<? extends NamePrinter>> allNamePrinterClasses) {
         this.allNamePrinterClasses = allNamePrinterClasses;
-        reload();
     }
 }

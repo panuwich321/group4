@@ -1,9 +1,14 @@
 package th.ac.kmitl.science.comsci.example.nameprinters;
 
-public class ThanathatNamePrinter extends NamePrinterBase {
+public class ThanathatNamePrinter extends BaseNameWithIdPrinter {
 
     @Override
     public String getName() {
-        return "58050276 Thanathat Surakhup";
+        return "Thanathat Surakhup";
+    }
+
+    @Override
+    public String getId() {
+        return "58050276";
     }
 }

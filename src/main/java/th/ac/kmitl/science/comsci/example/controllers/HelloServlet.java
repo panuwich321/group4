@@ -1,7 +1,6 @@
 package th.ac.kmitl.science.comsci.example.controllers;
 
 import th.ac.kmitl.science.comsci.example.models.Hello;
-import th.ac.kmitl.science.comsci.example.nameprinters.NamePrinter;
 import th.ac.kmitl.science.comsci.example.nameprinters.NamePrinterLoader;
 
 import javax.servlet.ServletException;

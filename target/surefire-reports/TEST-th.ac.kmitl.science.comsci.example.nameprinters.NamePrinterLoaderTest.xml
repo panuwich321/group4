@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="th.ac.kmitl.science.comsci.example.nameprinters.NamePrinterLoaderTest" time="0.207" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="th.ac.kmitl.science.comsci.example.nameprinters.NamePrinterLoaderTest" time="0.266" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2017.2.1"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -62,7 +62,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="th.ac.kmitl.science.comsci.example.nameprinters.NamePrinterLoaderTest" name="setAllNamePrinterClasses" time="0.207"/>
+  <testcase classname="th.ac.kmitl.science.comsci.example.nameprinters.NamePrinterLoaderTest" name="setAllNamePrinterClasses" time="0.266"/>
   <testcase classname="th.ac.kmitl.science.comsci.example.nameprinters.NamePrinterLoaderTest" name="printAllNames" time="0"/>
   <testcase classname="th.ac.kmitl.science.comsci.example.nameprinters.NamePrinterLoaderTest" name="getNamePrinters" time="0"/>
 </testsuite>

@@ -15,8 +15,11 @@ public class NamePrinterLoaderTest {
         Set<Class<? extends NamePrinter>> mockNamePrinterClasses = new HashSet<>();
 
         mockNamePrinterClasses.add(NamePrinter.class);
-        mockNamePrinterClasses.add(NamePrinterBase.class);
+        mockNamePrinterClasses.add(NameWithIdPrinter.class);
+        mockNamePrinterClasses.add(BaseNamePrinter.class);
+        mockNamePrinterClasses.add(BaseNameWithIdPrinter.class);
         mockNamePrinterClasses.add(ChayapolNamePrinter.class);
+        mockNamePrinterClasses.add(BearNamePrinter.class);
 
         return mockNamePrinterClasses;
     }
@@ -24,6 +27,7 @@ public class NamePrinterLoaderTest {
     private NamePrinterLoader setupMockNamePrinterLoader() {
         NamePrinterLoader namePrinterLoader = NamePrinterLoader.getInstance();
         namePrinterLoader.setAllNamePrinterClasses(createSetOfNamePrinters());
+        namePrinterLoader.reload();
         return namePrinterLoader;
     }
 
@@ -36,13 +40,9 @@ public class NamePrinterLoaderTest {
 
     @Test
     public void getNamePrinters() {
-        int namePrinterCount = 0;
         NamePrinterLoader namePrinterLoader = setupMockNamePrinterLoader();
 
-        for(NamePrinter namePrinter : namePrinterLoader)
-            namePrinterCount++;
-
-        assertEquals(1, namePrinterCount);
+        assertEquals(2, namePrinterLoader.count());
     }
 
     @Test
@@ -54,6 +54,7 @@ public class NamePrinterLoaderTest {
         StringWriter mockStringWriter = new StringWriter();
         PrintWriter mockPrintWriter = new PrintWriter(mockStringWriter);
         new ChayapolNamePrinter().print(mockPrintWriter);
+        new BearNamePrinter().print(mockPrintWriter);
 
         assertEquals (mockStringWriter.toString(), resultStringWriter.toString());
     }

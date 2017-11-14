@@ -1,9 +1,14 @@
 package th.ac.kmitl.science.comsci.example.nameprinters;
 
-public class PiyaponNamePrinter extends NamePrinterBase {
+public class PiyaponNamePrinter extends BaseNameWithIdPrinter {
 
     @Override
     public String getName() {
-        return "57050279 Piyapon Suntikan";
+        return "Piyapon Suntikan";
+    }
+
+    @Override
+    public String getId() {
+        return "57050279";
     }
 }
