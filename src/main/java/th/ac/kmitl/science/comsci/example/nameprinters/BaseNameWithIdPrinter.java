@@ -9,5 +9,5 @@ public abstract class BaseNameWithIdPrinter extends BaseNamePrinter implements N
     public void print(PrintWriter writer) {
         writer.println(listItemTagTemplate.replace("%s", this.getId() + " " + this.getName()));
     }
-
+    
 }
