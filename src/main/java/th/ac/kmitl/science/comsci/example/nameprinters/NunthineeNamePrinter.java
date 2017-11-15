@@ -1,6 +1,6 @@
 package th.ac.kmitl.science.comsci.example.nameprinters;
 
-public class NontakonNamePrinter extends BaseNameWithIdPrinter {
+public class NunthineeNamePrinter extends BaseNameWithIdPrinter {
 
     @Override
     public String getName() {
