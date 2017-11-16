@@ -1,8 +1,8 @@
 Example for CS-KMITL 2017
 =========================
 
-Prerequisite
-============
+Prerequisite Software
+=====================
 1. JDK 1.8
 2. Maven
 3. Tomcat 7
