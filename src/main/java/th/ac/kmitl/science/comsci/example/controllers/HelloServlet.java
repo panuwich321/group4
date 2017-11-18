@@ -1,8 +1,8 @@
 package th.ac.kmitl.science.comsci.example.controllers;
 
 import th.ac.kmitl.science.comsci.example.models.Hello;
-import th.ac.kmitl.science.comsci.example.nameprinters.NamePrinterLoader;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,14 +20,10 @@ public class HelloServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String message = new Hello().getMessage();
+        request.setAttribute("message", message);
 
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.println("<h1>" + message + "</h1>");
-        out.println("<ul>");
-        
-        NamePrinterLoader.getInstance().printAllNames(out);
-        
-        out.println("</ul>");
+        RequestDispatcher requestDispatcher;
+        requestDispatcher = request.getRequestDispatcher("/index.jsp");
+        requestDispatcher.forward(request, response);
     }
 }
