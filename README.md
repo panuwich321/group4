@@ -1,4 +1,4 @@
-CS-KMITL 2017: Group 2
+CS-KMITL 2017: Group 3
 =========================
 
 Prerequisite Software
