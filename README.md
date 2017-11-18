@@ -1,4 +1,4 @@
-Example for CS-KMITL 2017
+CS-KMITL 2017: Group 1
 =========================
 
 Prerequisite Software
@@ -18,3 +18,4 @@ $> mvn clean package
 Run
 ==========
 $> mvn clean install tomcat7:run
+access http://localhost:9090/helloWorld
