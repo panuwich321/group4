@@ -26,12 +26,12 @@ public class Buyer extends Profile{
         this.name = name;
     }
     
-    public String setTaxId() {
-        return taxId;
-    }
-
-    public void getTaxId(String taxId) {
+    public void setTaxId(String taxId) {
         this.taxId = taxId;
+    }
+    
+    public String getTaxId() {
+        return taxId;
     }
 
 }
