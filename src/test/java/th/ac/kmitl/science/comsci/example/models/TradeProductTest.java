@@ -4,13 +4,14 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class TradeProductTest {
+
     TradeProduct tradeProduct = new TradeProduct();
 
     @Test
     public void testConstructor(){
         String id = "id2780101";
         String globalId = "GId2780101";
-        String name = "Richard Mille RM 30 Le Mans Classic";
+        String name = "Laptop";
         TradeProduct ConstructorTradeProduct = new TradeProduct(id,
                                                                 globalId,
                                                                 name);
@@ -33,7 +34,7 @@ public class TradeProductTest {
 
     @Test
     public void testGetName() {
-        tradeProduct.setName("Richard Mille RM 30 Le Mans Classic");
-        assertEquals("Richard Mille RM 30 Le Mans Classic", tradeProduct.getName());
+        tradeProduct.setName("Laptop");
+        assertEquals("Laptop", tradeProduct.getName());
     }
 }

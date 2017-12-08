@@ -1,6 +1,7 @@
 package th.ac.kmitl.science.comsci.example.models;
 
 public class TradeProduct {
+
     private String id;
     private String globalId;
     private String name;
