@@ -6,70 +6,120 @@ import static org.junit.Assert.assertEquals;
 public class PostalTradeAddressTest {
 
     PostalTradeAddress postalTradeAddress = new PostalTradeAddress();
-    
+
     @Test
-    public void testgetLineOne() {
-       postalTradeAddress.setLineOne("Pasthiyakan Kaewpitak");
-       assertEquals(postalTradeAddress.getLineOne(), "Pasthiyakan Kaewpitak");
+    public void testConstructor(){
+        String lineOne = "Pasthiyakan Kaewpitak" ;
+
+        String lineTwo = "24000";
+
+        String lineThree = "Onnut 10";
+
+        String lineFour = "Golden Town";
+
+        String lineFive = "1";
+
+        String streetName = "Sukhumvit";
+
+        String cityName = "Suan Luang";
+
+        String citySubDivisionName = "Suan Luang";
+
+        String country = "Thai";
+
+        String countrySubDivision = "Bangkok";
+
+        String buildingNumber = "311";
+
+        PostalTradeAddress ConstructorPostalTradeAddress = new PostalTradeAddress(lineOne,
+                                                                                  lineTwo,
+                                                                                  lineThree,
+                                                                                  lineFour,
+                                                                                  lineFive,
+                                                                                  streetName,
+                                                                                  cityName,
+                                                                                  citySubDivisionName,
+                                                                                  country,
+                                                                                  countrySubDivision,
+                                                                                  buildingNumber);
+
+        assertEquals(lineOne, ConstructorPostalTradeAddress.getLineOne());
+        assertEquals(lineTwo, ConstructorPostalTradeAddress.getLineTwo());
+        assertEquals(lineThree, ConstructorPostalTradeAddress.getLineThree());
+        assertEquals(lineFour, ConstructorPostalTradeAddress.getLineFour());
+        assertEquals(lineFive, ConstructorPostalTradeAddress.getLineFive());
+        assertEquals(streetName, ConstructorPostalTradeAddress.getStreetName());
+        assertEquals(cityName, ConstructorPostalTradeAddress.getCityName());
+        assertEquals(citySubDivisionName, ConstructorPostalTradeAddress.getCitySubDivisionName());
+        assertEquals(country, ConstructorPostalTradeAddress.getCountry());
+        assertEquals(countrySubDivision, ConstructorPostalTradeAddress.getCountrySubDivision());
+        assertEquals(buildingNumber, ConstructorPostalTradeAddress.getBuildingNumber());
     }
-    
+
+
     @Test
-    public void testgetLineTwo() {
+    public void testGetLineOne() {
+        postalTradeAddress.setLineOne("Pasthiyakan Kaewpitak");
+        assertEquals("Pasthiyakan Kaewpitak", postalTradeAddress.getLineOne());
+    }
+
+    @Test
+    public void testGetLineTwo() {
        postalTradeAddress.setLineTwo("24000");
-       assertEquals(postalTradeAddress.getLineTwo(), "24000");
+       assertEquals("24000", postalTradeAddress.getLineTwo());
     }   
     
     @Test
-    public void testgetLineThree() {
+    public void testGetLineThree() {
        postalTradeAddress.setLineThree("Onnut 10");
-       assertEquals(postalTradeAddress.getLineThree(), "Onnut 10");
+       assertEquals("Onnut 10", postalTradeAddress.getLineThree());
     }
      
     @Test
-    public void testgetLineFour() {
+    public void testGetLineFour() {
        postalTradeAddress.setLineFour("Golden Town");
-       assertEquals(postalTradeAddress.getLineFour(), "Golden Town");
+       assertEquals("Golden Town", postalTradeAddress.getLineFour());
     }
 
     @Test
-    public void testgetLineFive() {
-       postalTradeAddress.setLineFour("1");
-       assertEquals(postalTradeAddress.getLineFour(), "1");
+    public void testGetLineFive() {
+       postalTradeAddress.setLineFive("1");
+       assertEquals("1", postalTradeAddress.getLineFive());
     }
 
     @Test
-    public void testgetStreetName() {
-       postalTradeAddress.setLineFour("Sukhumvit");
-       assertEquals(postalTradeAddress.getLineFour(), "Sukhumvit");
+    public void testGetStreetName() {
+       postalTradeAddress.setStreetName("Sukhumvit");
+       assertEquals("Sukhumvit", postalTradeAddress.getStreetName());
     }
     
     @Test
-    public void testgetCityName() {
+    public void testGetCityName() {
        postalTradeAddress.setCityName("Suan Luang");
-       assertEquals(postalTradeAddress.getCityName(), "Suan Luang");
+       assertEquals("Suan Luang", postalTradeAddress.getCityName());
     }
     
     @Test
-    public void testgetCitySubDivisionName() {
+    public void testGetCitySubDivisionName() {
        postalTradeAddress.setCitySubDivisionName("Suan Luang");
-       assertEquals(postalTradeAddress.getCitySubDivisionName(), "Suan Luang");
+       assertEquals("Suan Luang", postalTradeAddress.getCitySubDivisionName());
     }
    
     @Test
-    public void testgetCountry() {
+    public void testGetCountry() {
        postalTradeAddress.setCountry("Thai");
-       assertEquals(postalTradeAddress.getCountry(), "Thai");
+       assertEquals("Thai", postalTradeAddress.getCountry());
     }
 
     @Test
-    public void testgetCountrySubDivision() {
+    public void testGetCountrySubDivision() {
        postalTradeAddress.setCountrySubDivision("Bangkok");
-       assertEquals(postalTradeAddress.getCountrySubDivision(), "Bangkok");
+       assertEquals("Bangkok", postalTradeAddress.getCountrySubDivision());
     }
 
     @Test
-    public void testgetBuildingNumber() {
+    public void testGetBuildingNumber() {
        postalTradeAddress.setBuildingNumber("311");
-       assertEquals(postalTradeAddress.getBuildingNumber(), "311");
+       assertEquals("311", postalTradeAddress.getBuildingNumber());
     }
 }

@@ -24,11 +24,39 @@ public class PostalTradeAddress {
     private String countrySubDivision;
     
     private String buildingNumber;
+
+    public PostalTradeAddress() {
+    }
     
+    public PostalTradeAddress(String lineOne, 
+                              String lineTwo, 
+                              String lineThree, 
+                              String lineFour, 
+                              String lineFive, 
+                              String streetName, 
+                              String cityName, 
+                              String citySubDivisionName, 
+                              String country, 
+                              String countrySubDivision, 
+                              String buildingNumber) {
+        
+        this.lineOne = lineOne;
+        this.lineTwo = lineTwo;
+        this.lineThree = lineThree;
+        this.lineFour = lineFour;
+        this.lineFive = lineFive;
+        this.streetName = streetName;
+        this.cityName = cityName;
+        this.citySubDivisionName = citySubDivisionName;
+        this.country = country;
+        this.countrySubDivision = countrySubDivision;
+        this.buildingNumber = buildingNumber;
+    }
+
     public String getLineOne() {
         return lineOne;
     }
-
+    
     public void setLineOne(String lineOne) {
         this.lineOne = lineOne;
     }
