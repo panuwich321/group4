@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>สร้างใบกำกับภาษีอิเล็กทรอนิกส์</title>
     </head>
     <body>
         <h1>สร้างใบกำกับภาษีอิเล็กทรอนิกส์</h1>
