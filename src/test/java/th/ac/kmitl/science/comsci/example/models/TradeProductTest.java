@@ -21,20 +21,12 @@ public class TradeProductTest {
     }
 
     @Test
-    public void testGetId() {
+    public void testGetAllVariable() {
         tradeProduct.setId("id2780101");
-        assertEquals("id2780101", tradeProduct.getId());
-    }
-
-    @Test
-    public void testGetGlobalId() {
         tradeProduct.setGlobalId("GId2780101");
-        assertEquals("GId2780101", tradeProduct.getGlobalId());
-    }
-
-    @Test
-    public void testGetName() {
         tradeProduct.setName("Laptop");
+        assertEquals("id2780101", tradeProduct.getId());
+        assertEquals("GId2780101", tradeProduct.getGlobalId());
         assertEquals("Laptop", tradeProduct.getName());
     }
 }
